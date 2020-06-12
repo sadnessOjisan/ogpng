@@ -1,0 +1,30 @@
+{
+  "name": "ogpng",
+  "version": "1.0.0",
+  "description": "Engineer 向け OGP シェアサービス",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadnessOjisan/ogpng.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sadnessOjisan/ogpng/issues"
+  },
+  "homepage": "https://github.com/sadnessOjisan/ogpng#readme",
+  "dependencies": {
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.36",
+    "typescript": "^3.9.5"
+  }
+}

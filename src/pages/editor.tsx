@@ -3,15 +3,17 @@ import dynamic from "next/dynamic";
 
 const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });
 
-function IndexPage() {
+export default function Editor() {
+  const [text, edit] = React.useState("");
   return (
     <MonacoEditor
       height={"600px"}
       language="typescript"
       theme="vs-dark"
-      value={""}
-      onChange={console.log}
+      value={text}
+      onChange={edit}
       editorDidMount={() => {
+        // @ts-ignore
         window.MonacoEnvironment.getWorkerUrl = (moduleId, label) => {
           if (label === "json") return "/_next/static/json.worker.js";
           if (label === "css") return "/_next/static/css.worker.js";
@@ -24,5 +26,3 @@ function IndexPage() {
     />
   );
 }
-
-export default IndexPage;

@@ -27,7 +27,7 @@ jobs:
           npm run lint
       - name: test
         run: |
-          npm run jest
+          npm run test
       - name: gen test cov
         run: npm run test-cov
       - name: Cov Deploy

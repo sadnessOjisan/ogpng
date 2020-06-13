@@ -4,7 +4,7 @@
   "description": "Engineer 向け OGP シェアサービス",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "develop": "next",
     "lint": "eslint 'src/**/*.{js,json,jsx,ts,tsx}'"
   },
@@ -32,7 +32,9 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.20.0",
+    "jest": "^26.0.1",
     "prettier": "^2.0.5",
+    "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
   }
 }

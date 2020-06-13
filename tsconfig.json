@@ -13,7 +13,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "typeRoots": ["./types/*.d.ts"]
+    "types": ["node", "jest"]
   },
 
   "exclude": ["node_modules"],

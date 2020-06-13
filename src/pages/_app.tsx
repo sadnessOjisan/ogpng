@@ -3,12 +3,12 @@
  */
 
 import React, { useEffect } from "react";
+import Firebase from "../infrastructure/Firebase";
 import "../vendor/css/reset.css";
-// import Firebase from "../infrastructure/Firebase";
 
 export default function App({ Component, pageProps }: any) {
   useEffect(() => {
-    // Firebase.instance.init();
+    Firebase.instance.init();
   }, []);
   return (
     <>

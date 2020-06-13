@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          npm install
+      - name: type check
+        run: |
+          npm run typecheck
+      - name: lint & format
+        run: |
+          npm run lint
+      - name: test
+        run: |
+          npm run jest
+      - name: gen test cov
+        run: npm run test-cov
+      - name: Cov Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./coverage
+      - name: build
+        run: |
+          npm run build

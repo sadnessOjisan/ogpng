@@ -17,7 +17,7 @@ Engineer 向け OGP シェアサービス
   - [ ] tsc
   - [ ] SP 対応
   - [ ] firebase 準備
-    - [ ] auth
+    - [ ] auth(低)
     - [ ] storage
     - [ ] store
     - [ ] analytics
@@ -32,10 +32,10 @@ Engineer 向け OGP シェアサービス
   - [ ] 画像の投稿
   - [ ] プラポリの表示
   - [ ] 規約の表示
-- [ ] login 画面
+- [ ] login 画面(低)
   - [ ] IPASS 認証(低)
-  - [ ] 匿名ログイン
-  - [ ] GitHub 認証
+  - [ ] 匿名ログイン(低)
+  - [ ] GitHub 認証(低)
 - [ ] 生成画面
   - [ ] 画像の表示
   - [ ] twitter share

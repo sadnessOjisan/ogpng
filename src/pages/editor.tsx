@@ -16,6 +16,7 @@ export default function Editor() {
 
   const handleClick = () => {
     const imageId = generateRandomId();
+
     domtoimage
       .toBlob(ref.current)
       .then(async (blob) => {

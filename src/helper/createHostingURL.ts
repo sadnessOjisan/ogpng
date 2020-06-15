@@ -1,4 +1,3 @@
-import gcsPath from "../constatns/gcsPath";
 import { EnvType } from "../types/util/env";
 import hostingURL from "../constatns/hostingURL";
 

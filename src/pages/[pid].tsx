@@ -4,6 +4,7 @@ import Head from "next/head";
 import { getOgpUrl } from "../repository/postPng";
 import createGcsURL from "../helper/createGcsURL";
 import createHostingURL from "../helper/createHostingURL";
+import cloudStorageKeys from "../constatns/cloudStorageKeys";
 
 export default function Result() {
   const router = useRouter();
@@ -22,7 +23,7 @@ export default function Result() {
         <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:url"
-          content={createHostingURL(process.env.NODE_ENV)}
+          content={`${createHostingURL(process.env.NODE_ENV)}`}
         />
         <meta name="twitter:title" content={"title"} />
         <meta name="twitter:description" content={"description"} />
@@ -30,11 +31,15 @@ export default function Result() {
           <>
             <meta
               property="og:image"
-              content={createGcsURL(pid, process.env.NODE_ENV)}
+              content={`${createHostingURL(process.env.NODE_ENV)}/${
+                cloudStorageKeys.OGP
+              }/${pid}`}
             />
             <meta
               name="twitter:image"
-              content={createGcsURL(pid, process.env.NODE_ENV)}
+              content={`${createHostingURL(process.env.NODE_ENV)}/${
+                cloudStorageKeys.OGP
+              }/${pid}`}
             />
           </>
         )}
@@ -45,7 +50,11 @@ export default function Result() {
           console.log(d);
         }}
       >
-        aaa
+        <img
+          src={`${createHostingURL(process.env.NODE_ENV)}/${
+            cloudStorageKeys.OGP
+          }/${pid}`}
+        ></img>
       </button>
     </div>
   );

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import domtoimage from "dom-to-image";
 import { saveOgp } from "../repository/postPng";
@@ -7,6 +8,7 @@ import { generateRandomId } from "../helper/util";
 const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });
 
 export default function Editor() {
+  const router = useRouter();
   const [text, edit] = React.useState(
     '<div style="background-color: yellow; height: 300px;"> \n<p style="color: blue;">はじめてのCSS</p></div>'
   );
@@ -14,10 +16,12 @@ export default function Editor() {
 
   const handleClick = () => {
     const imageId = generateRandomId();
-    return domtoimage
+
+    domtoimage
       .toBlob(ref.current)
       .then(async (blob) => {
         await saveOgp(imageId, blob);
+        router.push(`/${imageId}`);
       })
       .catch(function (error) {
         console.error("oops, something went wrong!", error);

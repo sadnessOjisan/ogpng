@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1592250630584" clover="3.2.0">
-  <project timestamp="1592250630584" name="All files">
+<coverage generated="1592278259018" clover="3.2.0">
+  <project timestamp="1592278259018" name="All files">
     <metrics statements="35" coveredstatements="12" conditionals="15" coveredconditionals="1" methods="7" coveredmethods="2" elements="57" coveredelements="15" complexity="0" loc="35" ncloc="35" packages="1" files="1" classes="1"/>
     <file name="Firebase.ts" path="/home/runner/work/ogpng/ogpng/src/infrastructure/Firebase.ts">
       <metrics statements="35" coveredstatements="12" conditionals="15" coveredconditionals="1" methods="7" coveredmethods="2"/>

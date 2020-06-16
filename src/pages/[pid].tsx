@@ -13,15 +13,8 @@ export default function Result() {
   return (
     <div>
       <Head>
-        <title>{"title"}</title>
-        <meta property="og:title" content={"title"} />
-        <meta property="og:description" content={"description"} />
-        <meta property="og:url" content={createHostingURL(env())} />
-        <meta property="og:site_name" content={"title"} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content={`${createHostingURL(env())}`} />
-        <meta name="twitter:title" content={"title"} />
-        <meta name="twitter:description" content={"description"} />
+        <title>{"created OGP"}</title>
+        <meta property="og:url" content={`${createHostingURL(env())}/${pid}`} />
         {typeof pid === "string" && (
           <>
             <meta

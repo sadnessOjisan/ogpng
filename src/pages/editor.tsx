@@ -55,7 +55,7 @@ export default function Editor() {
         </div>
       </div>
       <button className="submit" onClick={handleClick}>
-        送信
+        送信({process.env.NODE_ENV})
       </button>
       <style jsx>{`
         .wrapper {

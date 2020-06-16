@@ -51,8 +51,3 @@ export default function Result() {
     </div>
   );
 }
-
-// Result.getInitialProps = async () => {
-//   const imageURL = await getOgpUrl(`i1apspps`);
-//   return { imageURL };
-// };

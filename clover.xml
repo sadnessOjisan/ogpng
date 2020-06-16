@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1592282027477" clover="3.2.0">
-  <project timestamp="1592282027477" name="All files">
-    <metrics statements="41" coveredstatements="14" conditionals="20" coveredconditionals="1" methods="8" coveredmethods="2" elements="69" coveredelements="17" complexity="0" loc="41" ncloc="41" packages="2" files="2" classes="2"/>
+<coverage generated="1592282395079" clover="3.2.0">
+  <project timestamp="1592282395079" name="All files">
+    <metrics statements="41" coveredstatements="14" conditionals="22" coveredconditionals="1" methods="8" coveredmethods="2" elements="71" coveredelements="17" complexity="0" loc="41" ncloc="41" packages="2" files="2" classes="2"/>
     <package name="helper">
-      <metrics statements="5" coveredstatements="1" conditionals="5" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="1" conditionals="7" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="env.ts" path="/home/runner/work/ogpng/ogpng/src/helper/env.ts">
-        <metrics statements="5" coveredstatements="1" conditionals="5" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="5" coveredstatements="1" conditionals="7" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="6" count="0" type="cond" truecount="0" falsecount="5"/>
         <line num="7" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>

@@ -2,9 +2,9 @@ import * as React from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { getOgpUrl } from "../repository/postPng";
-import createGcsURL from "../helper/createGcsURL";
 import createHostingURL from "../helper/createHostingURL";
 import cloudStorageKeys from "../constatns/cloudStorageKeys";
+import env from "../helper/env";
 
 export default function Result() {
   const router = useRouter();
@@ -15,29 +15,23 @@ export default function Result() {
         <title>{"title"}</title>
         <meta property="og:title" content={"title"} />
         <meta property="og:description" content={"description"} />
-        <meta
-          property="og:url"
-          content={createHostingURL(process.env.NODE_ENV)}
-        />
+        <meta property="og:url" content={createHostingURL(env())} />
         <meta property="og:site_name" content={"title"} />
         <meta name="twitter:card" content="summary" />
-        <meta
-          name="twitter:url"
-          content={`${createHostingURL(process.env.NODE_ENV)}`}
-        />
+        <meta name="twitter:url" content={`${createHostingURL(env())}`} />
         <meta name="twitter:title" content={"title"} />
         <meta name="twitter:description" content={"description"} />
         {typeof pid === "string" && (
           <>
             <meta
               property="og:image"
-              content={`${createHostingURL(process.env.NODE_ENV)}/${
+              content={`${createHostingURL(env())}/${
                 cloudStorageKeys.OGP
               }/${pid}`}
             />
             <meta
               name="twitter:image"
-              content={`${createHostingURL(process.env.NODE_ENV)}/${
+              content={`${createHostingURL(env())}/${
                 cloudStorageKeys.OGP
               }/${pid}`}
             />
@@ -51,9 +45,7 @@ export default function Result() {
         }}
       >
         <img
-          src={`${createHostingURL(process.env.NODE_ENV)}/${
-            cloudStorageKeys.OGP
-          }/${pid}`}
+          src={`${createHostingURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
         ></img>
       </button>
     </div>

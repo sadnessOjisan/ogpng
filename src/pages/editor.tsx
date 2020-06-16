@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import domtoimage from "dom-to-image";
 import { saveOgp } from "../repository/postPng";
 import { generateRandomId } from "../helper/util";
+import env from "../helper/env";
 
 const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });
 
@@ -55,7 +56,7 @@ export default function Editor() {
         </div>
       </div>
       <button className="submit" onClick={handleClick}>
-        送信({process.env.NODE_ENV})
+        送信({env()})
       </button>
       <style jsx>{`
         .wrapper {

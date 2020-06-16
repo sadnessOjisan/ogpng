@@ -23,5 +23,7 @@ module.exports = withCSS({
     return config;
   },
 
-  env: { DEPLOY_ENV: process.env.DEPLOY_ENV },
+  env: { NEXT_PUBLIC_DEPLOY_ENV: process.env.DEPLOY_ENV },
 });
+
+console.log("[next.config.js] process:", process.env);

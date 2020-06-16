@@ -5,6 +5,7 @@ import { getOgpUrl } from "../repository/postPng";
 import createHostingURL from "../helper/createHostingURL";
 import cloudStorageKeys from "../constatns/cloudStorageKeys";
 import env from "../helper/env";
+import createGcsURL from "../helper/createGcsURL";
 
 export default function Result() {
   const router = useRouter();
@@ -45,7 +46,7 @@ export default function Result() {
         }}
       >
         <img
-          src={`${createHostingURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
+          src={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
         ></img>
       </button>
       <style jsx>{`

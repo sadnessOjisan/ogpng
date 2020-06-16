@@ -1,5 +1,7 @@
+const path = require("path");
 const withCSS = require("@zeit/next-css");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = withCSS({
   webpack: (config) => {
@@ -18,6 +20,13 @@ module.exports = withCSS({
         // Add languages as needed...
         languages: ["javascript", "typescript", "html"],
         filename: "static/[name].worker.js",
+      })
+    );
+
+    config.plugins.push(
+      new Dotenv({
+        path: path.join(__dirname, ".env"),
+        systemvars: true,
       })
     );
 

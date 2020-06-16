@@ -16,27 +16,27 @@ Engineer 向け OGP シェアサービス
   - [x] formatter
   - [x] tsc
   - [ ] SP 対応
-  - [ ] firebase 準備
+  - [x] firebase 準備
     - [ ] auth(低)
-    - [ ] storage
-    - [ ] store
-    - [ ] analytics
-  - [ ] vercel
-    - [ ] deploy
-    - [ ] secrets
-  - [ ] Jest 設定
+    - [x] storage
+    - [ ] store(低)
+    - [x] analytics
+  - [x] vercel
+    - [x] deploy
+    - [x] secrets
+  - [x] Jest 設定
 - [x] editor 画面
   - [x] monaco 埋め込み
   - [ ] コードから画面生成
     - [x] HTML
     - [ ] JS
     - [ ] JSX
-  - [ ] 画面から画像生成
-  - [ ] 画像の投稿
+  - [x] 画面から画像生成
+  - [x] 画像の投稿
   - [ ] プラポリの表示
   - [ ] 規約の表示
 - [ ] 生成画面
-  - [ ] 画像の表示
+  - [x] 画像の表示
   - [ ] twitter share
 - [ ] トップページ
   - [ ] サービス紹介

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1592284508957" clover="3.2.0">
-  <project timestamp="1592284508957" name="All files">
-    <metrics statements="39" coveredstatements="14" conditionals="15" coveredconditionals="1" methods="8" coveredmethods="2" elements="62" coveredelements="17" complexity="0" loc="39" ncloc="39" packages="2" files="2" classes="2"/>
+<coverage generated="1592284840107" clover="3.2.0">
+  <project timestamp="1592284840108" name="All files">
+    <metrics statements="40" coveredstatements="14" conditionals="15" coveredconditionals="1" methods="8" coveredmethods="2" elements="63" coveredelements="17" complexity="0" loc="40" ncloc="40" packages="2" files="2" classes="2"/>
     <package name="helper">
-      <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="env.ts" path="/home/runner/work/ogpng/ogpng/src/helper/env.ts">
-        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
       </file>
     </package>
     <package name="infrastructure">

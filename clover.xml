@@ -1,44 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1592278259018" clover="3.2.0">
-  <project timestamp="1592278259018" name="All files">
-    <metrics statements="35" coveredstatements="12" conditionals="15" coveredconditionals="1" methods="7" coveredmethods="2" elements="57" coveredelements="15" complexity="0" loc="35" ncloc="35" packages="1" files="1" classes="1"/>
-    <file name="Firebase.ts" path="/home/runner/work/ogpng/ogpng/src/infrastructure/Firebase.ts">
-      <metrics statements="35" coveredstatements="12" conditionals="15" coveredconditionals="1" methods="7" coveredmethods="2"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="10" count="0" type="stmt"/>
-      <line num="21" count="0" type="stmt"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="36" count="1" type="stmt"/>
-      <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="44" count="0" type="stmt"/>
-      <line num="45" count="0" type="stmt"/>
-      <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="47" count="0" type="stmt"/>
-      <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="51" count="0" type="stmt"/>
-      <line num="55" count="1" type="stmt"/>
-      <line num="56" count="0" type="stmt"/>
-      <line num="57" count="0" type="stmt"/>
-      <line num="60" count="1" type="stmt"/>
-      <line num="61" count="0" type="stmt"/>
-      <line num="62" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="63" count="0" type="stmt"/>
-      <line num="65" count="0" type="stmt"/>
-      <line num="68" count="1" type="stmt"/>
-      <line num="69" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="70" count="0" type="stmt"/>
-      <line num="72" count="0" type="stmt"/>
-      <line num="73" count="0" type="stmt"/>
-      <line num="77" count="1" type="stmt"/>
-      <line num="78" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="79" count="0" type="stmt"/>
-      <line num="81" count="0" type="stmt"/>
-      <line num="82" count="0" type="stmt"/>
-      <line num="85" count="1" type="stmt"/>
-    </file>
+<coverage generated="1592282027477" clover="3.2.0">
+  <project timestamp="1592282027477" name="All files">
+    <metrics statements="41" coveredstatements="14" conditionals="20" coveredconditionals="1" methods="8" coveredmethods="2" elements="69" coveredelements="17" complexity="0" loc="41" ncloc="41" packages="2" files="2" classes="2"/>
+    <package name="helper">
+      <metrics statements="5" coveredstatements="1" conditionals="5" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="env.ts" path="/home/runner/work/ogpng/ogpng/src/helper/env.ts">
+        <metrics statements="5" coveredstatements="1" conditionals="5" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="infrastructure">
+      <metrics statements="36" coveredstatements="13" conditionals="15" coveredconditionals="1" methods="7" coveredmethods="2"/>
+      <file name="Firebase.ts" path="/home/runner/work/ogpng/ogpng/src/infrastructure/Firebase.ts">
+        <metrics statements="36" coveredstatements="13" conditionals="15" coveredconditionals="1" methods="7" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

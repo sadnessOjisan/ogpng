@@ -1,7 +1,5 @@
-const path = require("path");
 const withCSS = require("@zeit/next-css");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
-const Dotenv = require("dotenv-webpack");
 
 module.exports = withCSS({
   webpack: (config) => {
@@ -22,14 +20,8 @@ module.exports = withCSS({
         filename: "static/[name].worker.js",
       })
     );
-
-    config.plugins.push(
-      new Dotenv({
-        path: path.join(__dirname, ".env"),
-        systemvars: true,
-      })
-    );
-
     return config;
   },
+
+  env: { DEPLOY_ENV: process.env.DEPLOY_ENV },
 });

@@ -19,10 +19,32 @@ export default function Editor() {
     const imageId = generateRandomId();
 
     domtoimage
-      .toBlob(ref.current)
-      .then(async (blob) => {
-        await saveOgp(imageId, blob);
-        router.push(`/${imageId}`);
+      .toPng(ref.current, {
+        // NOTE: 画質対応
+        // https://github.com/tsayen/dom-to-image/issues/69
+        height: ref.current.offsetHeight * 2,
+        style: {
+          transform: `scale(${2}) translate(${
+            ref.current.offsetWidth / 2 / 2
+          }px, ${ref.current.offsetHeight / 2 / 2}px)`,
+        },
+        width: ref.current.offsetWidth * 2,
+      })
+      .then((dataURL) => {
+        const img = new Image();
+        img.src = dataURL;
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = 1600;
+          canvas.height = 600;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          // canvasをblobに変換し、FileSaverでダウンロードを行う
+          canvas.toBlob(async (blob) => {
+            await saveOgp(imageId, blob);
+            router.push(`/${imageId}`);
+          });
+        };
       })
       .catch(function (error) {
         console.error("oops, something went wrong!", error);

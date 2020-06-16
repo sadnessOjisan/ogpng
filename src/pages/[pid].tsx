@@ -48,6 +48,12 @@ export default function Result() {
           src={`${createHostingURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
         ></img>
       </button>
+      <style jsx>{`
+        img {
+          width: 800px;
+          height: 300px;
+        }
+      `}</style>
     </div>
   );
 }

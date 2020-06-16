@@ -5,6 +5,7 @@ import { getOgpUrl } from "../repository/postPng";
 import createHostingURL from "../helper/createHostingURL";
 import cloudStorageKeys from "../constatns/cloudStorageKeys";
 import env from "../helper/env";
+import createGcsURL from "../helper/createGcsURL";
 
 export default function Result() {
   const router = useRouter();
@@ -12,15 +13,8 @@ export default function Result() {
   return (
     <div>
       <Head>
-        <title>{"title"}</title>
-        <meta property="og:title" content={"title"} />
-        <meta property="og:description" content={"description"} />
-        <meta property="og:url" content={createHostingURL(env())} />
-        <meta property="og:site_name" content={"title"} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content={`${createHostingURL(env())}`} />
-        <meta name="twitter:title" content={"title"} />
-        <meta name="twitter:description" content={"description"} />
+        <title>{"created OGP"}</title>
+        <meta property="og:url" content={`${createHostingURL(env())}/${pid}`} />
         {typeof pid === "string" && (
           <>
             <meta
@@ -45,7 +39,7 @@ export default function Result() {
         }}
       >
         <img
-          src={`${createHostingURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
+          src={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
         ></img>
       </button>
       <style jsx>{`

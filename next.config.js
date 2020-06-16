@@ -20,7 +20,7 @@ module.exports = withCSS({
         filename: "static/[name].worker.js",
       })
     );
-
     return config;
   },
+  env: { NEXT_PUBLIC_DEPLOY_ENV: process.env.DEPLOY_ENV },
 });

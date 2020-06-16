@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/storage";
+import createEnv from "../helper/env";
 import { EnvType } from "../types/util/env";
 import { FirebaseConfigType } from "../types/util/firebase";
 
@@ -41,7 +42,7 @@ export default class Firebase {
   private constructor() {
     // https://github.com/zeit/next.js/issues/1999#issuecomment-302244429
     if (!firebase.apps.length) {
-      const env = genFirebaseConfig(process.env.NODE_ENV);
+      const env = genFirebaseConfig(createEnv());
       firebase.initializeApp(env);
       if (process.browser) {
         firebase.analytics();

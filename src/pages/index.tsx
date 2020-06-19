@@ -53,6 +53,8 @@ export default function Editor() {
 
   return (
     <div className="container">
+      <h1>OGPNG</h1>
+      <h2>エンジニア向けOGP画像作成＆シェアサービス</h2>
       <div className="wrapper">
         <div className="monaco-wrapper">
           <MonacoEditor
@@ -86,31 +88,70 @@ export default function Editor() {
         <img src="/airplane.svg" className="icon"></img>
       </button>
       <style jsx>{`
+        h1,
+        h2 {
+          font-family: -apple-system, BlinkMacSystemFont,
+            "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+          text-align: center;
+        }
+        h1 {
+          font-size: 48px;
+          letter-spacing: 5px;
+          margin-bottom: 8px;
+          color: rgba(0, 0, 0, 0.8);
+          font-weight: 900;
+        }
+        h2 {
+          font-size: 24px;
+          margin-bottom: 24px;
+          color: gray;
+        }
         .container {
-          height: 100vh;
           background-color: #ebecf0;
+          padding: 20px;
+          height: 100vh;
+        }
+        @media screen and (max-width: 480px) {
+          .container {
+            height: auto;
+          }
         }
         .wrapper {
           display: flex;
+          height: 80%;
           align-items: center;
           padding: 8px;
-          height: 90vh;
           justify-content: space-evenly;
+        }
+        @media screen and (max-width: 480px) {
+          .wrapper {
+            flex-wrap: wrap;
+          }
         }
         .monaco-wrapper {
           width: 45%;
-          height: 80vh;
+          height: 90%;
           border-radius: 4px;
           box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
             3px 3px 5px rgba(0, 0, 0, 0.1);
         }
+        @media screen and (max-width: 480px) {
+          .monaco-wrapper {
+            width: 100%;
+          }
+        }
         .preview {
           width: 45%;
-          height: 50%;
+          height: 70%;
           padding: 24px;
           background-color: white;
           border-radius: 12px;
           display: flex;
+        }
+        @media screen and (max-width: 480px) {
+          .preview {
+            width: 100%;
+          }
         }
         .submit {
           display: block;
@@ -128,6 +169,17 @@ export default function Editor() {
           background-color: #ebecf0;
           font-family: -apple-system, BlinkMacSystemFont,
             "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+        }
+        .submit:hover {
+          box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+        }
+        .submit:active {
+          box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+        }
+        @media screen and (max-width: 480px) {
+          .submit {
+            margin-bottom: 0;
+          }
         }
         .icon {
           width: 20px;

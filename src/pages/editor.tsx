@@ -17,7 +17,6 @@ export default function Editor() {
 
   const handleClick = () => {
     const imageId = generateRandomId();
-
     domtoimage
       .toPng(ref.current, {
         // NOTE: 画質対応

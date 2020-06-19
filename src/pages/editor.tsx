@@ -5,6 +5,7 @@ import domtoimage from "dom-to-image";
 import { saveOgp } from "../repository/postPng";
 import { generateRandomId } from "../helper/util";
 import env from "../helper/env";
+import "../vendor/css/monaco.css";
 
 const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });
 
@@ -56,8 +57,9 @@ export default function Editor() {
         <div className="monaco-wrapper">
           <MonacoEditor
             language="html"
-            theme="vs"
+            // theme="vs"
             value={text}
+            options={{ minimap: { enabled: false } }}
             onChange={edit}
             editorDidMount={() => {
               // @ts-ignore
@@ -84,13 +86,16 @@ export default function Editor() {
           display: flex;
           align-items: center;
           padding: 8px;
+          background-color: #ebecf0;
+          height: 100vh;
         }
         .monaco-wrapper {
           width: 50%;
           height: 80vh;
           border-radius: 4px;
           margin-right: 8px;
-          border: solid 1px gray;
+          box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
+            3px 3px 5px rgba(0, 0, 0, 0.1);
         }
         .preview {
           width: 50%;

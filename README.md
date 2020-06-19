@@ -2,6 +2,14 @@
 
 Engineer 向け OGP シェアサービス
 
+## Dev
+
+```sh
+yarn install
+
+yarn develop
+```
+
 ## 機能
 
 - Editor で 画面を作れる

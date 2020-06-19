@@ -3,6 +3,7 @@
   height: 90% !important;
   margin-top: 5% !important;
   margin: auto;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
 }
 
 .view-lines {
@@ -19,12 +20,7 @@
 }
 
 .monaco-editor {
-  height: 100% !important;
   background-color: #ebecf0 !important;
-}
-
-.overflow-guard {
-  height: 100% !important;
 }
 
 .margin {
@@ -51,4 +47,12 @@
   box-shadow: 0px 0px 4px 1px red !important; */
   border: none !important;
   box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff !important;
+}
+
+.view-lines {
+  height: 726px !important;
+}
+
+.margin-view-overlays {
+  height: 726px !important;
 }

@@ -79,8 +79,9 @@ export default function Editor() {
             }}
           />
         </div>
-        <div className="preview" ref={ref}>
+        <div className="preview">
           <div
+            ref={ref}
             dangerouslySetInnerHTML={{ __html: text }}
             style={{ margin: "auto" }}
           />

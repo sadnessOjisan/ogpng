@@ -44,8 +44,7 @@ export default function Result() {
       </button>
       <style jsx>{`
         img {
-          width: 800px;
-          height: 300px;
+          width: 50%;
         }
       `}</style>
     </div>

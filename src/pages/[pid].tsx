@@ -28,7 +28,6 @@ export default function Result(props: NextPage & { pid: string }) {
           property="og:url"
           content={`${createHostingURL(appEnv)}/${props.pid}`}
         />
-
         <meta property="og:type" content="article" />
         <meta
           property="og:description"

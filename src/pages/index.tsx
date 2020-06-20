@@ -11,7 +11,24 @@ const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });
 export default function Editor() {
   const router = useRouter();
   const [text, edit] = React.useState(
-    '<div style=" background: radial-gradient(#F2B9A1, #EA6264); height: 400px; width: 500px; padding: 24px; text-align: center;">\n<p>HTMLならなんでも書き込めるよ</p>\n <p>あ、でも外部リソースはCORSの制約で厳しい</p>\n <p>JS & JSX の対応をいま頑張ってます。</p></div>'
+    `<div style="
+    background: radial-gradient(#F2B9A1, #EA6264);
+    height: 400px;
+    width: 500px;
+    padding: 24px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-family: 'ヒラギノ角ゴ ProN W3';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    "
+>
+   <p style="margin-bottom: 12px;">HTMLならなんでも書き込めます。</p>
+   <p style="margin-bottom: 12px;">外部リソースはCORSの制約で厳しい</p>
+   <p>JS & JSX の対応をいま頑張ってます。</p>
+</div>`
   );
   const ref = React.useRef<HTMLDivElement>(null);
 
@@ -58,7 +75,7 @@ export default function Editor() {
         OGPNG
         <span> &#010;beta</span>
       </h1>
-      <h2>エンジニア向けOGP画像作成＆シェアサービス</h2>
+      <h2>コードから画像作成してシェアできるサービス</h2>
       <div className="wrapper">
         <div className="monaco-wrapper">
           <MonacoEditor

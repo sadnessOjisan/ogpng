@@ -59,7 +59,6 @@ export default class Firebase {
   }
 
   public static get instance(): Firebase {
-    console.log(this._instance);
     if (!this._instance) {
       this._instance = new Firebase();
     }

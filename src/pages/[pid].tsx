@@ -14,11 +14,6 @@ export default function Result(props: NextPage & { pid: string }) {
     setURL(window.location.href);
   }, []);
   const appEnv = env();
-  console.log("appEnv:", appEnv);
-  console.log(
-    "urpp",
-    `${createGcsURL(env())}/${cloudStorageKeys.OGP}/${props.pid}`
-  );
   return (
     <div className="wrapper">
       <Head>

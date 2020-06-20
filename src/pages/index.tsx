@@ -12,31 +12,33 @@ const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });
 export default function Editor() {
   const router = useRouter();
   const [text, edit] = React.useState(
-    '<div style=" background: radial-gradient(#F2B9A1, #EA6264); height: 400px; width: 500px; padding: 24px; text-align: center;">\n<p>HTMLならなんでも書き込めるよ</p>\n <p>あ、でも外部リソースはCORSの制約で厳しい</p></div>'
+    '<div style=" background: radial-gradient(#F2B9A1, #EA6264); height: 400px; width: 500px; padding: 24px; text-align: center;">\n<p>HTMLならなんでも書き込めるよ</p>\n <p>あ、でも外部リソースはCORSの制約で厳しい</p>\n <p>JS & JSX の対応をいま頑張ってます。</p></div>'
   );
   const ref = React.useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
+    const scale = 2;
     const imageId = generateRandomId();
     domtoimage
       .toPng(ref.current, {
         // NOTE: 画質対応
         // https://github.com/tsayen/dom-to-image/issues/69
-        height: ref.current.offsetHeight * 2,
+        height: ref.current.offsetHeight * scale,
+        width: ref.current.offsetWidth * scale,
         style: {
-          transform: `scale(${2}) translate(${
-            ref.current.offsetWidth / 2 / 2
-          }px, ${ref.current.offsetHeight / 2 / 2}px)`,
+          transform: "scale(" + scale + ")",
+          transformOrigin: "top left",
+          width: ref.current.offsetWidth + "px",
+          height: ref.current.offsetHeight + "px",
         },
-        width: ref.current.offsetWidth * 2,
       })
       .then((dataURL) => {
         const img = new Image();
         img.src = dataURL;
         img.onload = () => {
           const canvas = document.createElement("canvas");
-          canvas.width = 1600;
-          canvas.height = 600;
+          canvas.width = ref.current.offsetWidth * 2;
+          canvas.height = ref.current.offsetHeight * 2;
           const ctx = canvas.getContext("2d");
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
           // canvasをblobに変換し、FileSaverでダウンロードを行う
@@ -80,18 +82,21 @@ export default function Editor() {
           />
         </div>
         <div className="preview">
-          <div
-            ref={ref}
-            dangerouslySetInnerHTML={{ __html: text }}
-            style={{ margin: "auto" }}
-          />
+          <div ref={ref} dangerouslySetInnerHTML={{ __html: text }} />
         </div>
       </div>
       <button className="submit" onClick={handleClick}>
         <span>OGP画像を作成する</span>
         <img src="/airplane.svg" className="icon"></img>
       </button>
+      <p style={{ textAlign: "center" }}>
+        (注)beta版です。予告なくデータを消すことがあるかもしれません。他人を誹謗中傷する内容や公的良俗にそぐわない内容の投稿は禁止します。
+      </p>
       <style jsx>{`
+        html,
+        body {
+          background-color: #ebecf0;
+        }
         h1,
         h2 {
           font-family: -apple-system, BlinkMacSystemFont,
@@ -156,6 +161,8 @@ export default function Editor() {
           background-color: white;
           border-radius: 12px;
           display: flex;
+          justify-content: center;
+          align-items: center;
         }
         @media screen and (max-width: 480px) {
           .preview {

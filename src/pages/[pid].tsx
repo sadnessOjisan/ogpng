@@ -19,22 +19,14 @@ export default function Result() {
         <title>{"created OGP"}</title>
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta property="og:url" content={`${createHostingURL(env())}/${pid}`} />
-        {typeof pid === "string" && (
-          <>
-            <meta
-              property="og:image"
-              content={`${createHostingURL(env())}/${
-                cloudStorageKeys.OGP
-              }/${pid}`}
-            />
-            <meta
-              name="twitter:image"
-              content={`${createHostingURL(env())}/${
-                cloudStorageKeys.OGP
-              }/${pid}`}
-            />
-          </>
-        )}
+        <meta
+          property="og:image"
+          content={`${createHostingURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
+        />
+        <meta
+          name="twitter:image"
+          content={`${createHostingURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
+        />
       </Head>
       <h1>生成された画像</h1>
       <img src={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${pid}`}></img>

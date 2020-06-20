@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import domtoimage from "dom-to-image";
 import { saveOgp } from "../repository/postPng";
 import { generateRandomId } from "../helper/util";
-import env from "../helper/env";
 import "../vendor/css/monaco.css";
 
 const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });

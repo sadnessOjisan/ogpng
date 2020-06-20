@@ -201,8 +201,6 @@ export default function Editor() {
           width: 20px;
           height: 20px;
           margin-left: 12px;
-          fill: red;
-          color: red;
         }
       `}</style>
     </div>

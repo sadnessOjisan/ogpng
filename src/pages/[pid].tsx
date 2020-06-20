@@ -39,7 +39,10 @@ export default function Result() {
       <h1>生成された画像</h1>
       <img src={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${pid}`}></img>
       <a href={`https://twitter.com/intent/tweet?text=${url}`}>
-        <button>OGP画像をシェアする</button>
+        <button>
+          OGP画像をシェアする
+          <img src="/twitter.svg" className="icon"></img>
+        </button>
       </a>
       <style jsx>{`
         .wrapper {
@@ -80,6 +83,11 @@ export default function Result() {
           font-family: -apple-system, BlinkMacSystemFont,
             "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
           margin-top: 52px;
+        }
+        .icon {
+          width: 20px;
+          height: 20px;
+          margin-left: 12px;
         }
       `}</style>
     </div>

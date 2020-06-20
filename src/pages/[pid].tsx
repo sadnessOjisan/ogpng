@@ -17,6 +17,7 @@ export default function Result() {
     <div className="wrapper">
       <Head>
         <title>{"created OGP"}</title>
+        <meta name="twitter:card" content="summary_large_image"></meta>
         <meta property="og:url" content={`${createHostingURL(env())}/${pid}`} />
         {typeof pid === "string" && (
           <>

@@ -6,8 +6,9 @@ import createHostingURL from "../helper/createHostingURL";
 import cloudStorageKeys from "../constatns/cloudStorageKeys";
 import env from "../helper/env";
 import createGcsURL from "../helper/createGcsURL";
+import { GetServerSideProps, NextPage } from "next";
 
-export default function Result() {
+export default function Result(props: NextPage & { pid: string }) {
   const [url, setURL] = React.useState("");
   React.useEffect(() => {
     setURL(window.location.href);
@@ -20,9 +21,14 @@ export default function Result() {
         <title>{"created OGP"}</title>
         <meta
           property="og:image"
-          content={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
+          content={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${
+            props.pid
+          }`}
         />
-        <meta property="og:url" content={`${createHostingURL(env())}/${pid}`} />
+        <meta
+          property="og:url"
+          content={`${createHostingURL(env())}/${props.pid}`}
+        />
 
         <meta property="og:type" content="article" />
         <meta
@@ -38,11 +44,15 @@ export default function Result() {
         />
         <meta
           name="twitter:image"
-          content={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
+          content={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${
+            props.pid
+          }`}
         />
       </Head>
       <h1>生成された画像</h1>
-      <img src={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${pid}`}></img>
+      <img
+        src={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${props.pid}`}
+      ></img>
       <a href={`https://twitter.com/intent/tweet?text=${url}`}>
         <button>
           OGP画像をシェアする
@@ -107,3 +117,8 @@ export default function Result() {
     </div>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { pid } = context.query;
+  return { props: { pid } };
+};

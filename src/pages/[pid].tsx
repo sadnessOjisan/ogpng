@@ -31,7 +31,7 @@ export default function Result() {
         />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="yatoe" />
+        <meta name="twitter:title" content="ogpng" />
         <meta
           name="twitter:description"
           content={`ogpngは、HTMLからOGP画像を生成しシェアできるサービスです。`}

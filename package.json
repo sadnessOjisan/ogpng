@@ -34,7 +34,8 @@
     "next-transpile-modules": "^3.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-monaco-editor": "^0.36.0"
+    "react-monaco-editor": "^0.36.0",
+    "use-media": "^1.4.0"
   },
   "devDependencies": {
     "@types/dom-to-image": "^2.6.1",

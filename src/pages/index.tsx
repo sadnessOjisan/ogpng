@@ -5,32 +5,82 @@ import domtoimage from "dom-to-image";
 import { saveOgp } from "../repository/postPng";
 import { generateRandomId } from "../helper/util";
 import "../vendor/css/monaco.css";
+import "../vendor/css/normal.css";
 
 const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });
 
+const mediaQueries = {
+  mobile: "(max-width: 767px)",
+  prefersReducedMotion: "(prefers-reduced-motion: reduce)",
+};
+
+function useMedia(query) {
+  const [matches, setMatches] = React.useState(
+    typeof window !== "undefined" ? window.matchMedia(query).matches : false
+  );
+
+  React.useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+
+    const listener = () => setMatches(media.matches);
+    media.addListener(listener);
+
+    return () => media.removeListener(listener);
+  }, [query]);
+
+  return matches;
+}
+
 export default function Editor() {
   const router = useRouter();
-  const [text, edit] = React.useState(
-    `<div style="
+  const [text, edit] = React.useState("");
+  const mobileView = useMedia(mediaQueries.mobile);
+  React.useEffect(() => {
+    console.log("mobileView", mobileView);
+    edit(
+      mobileView
+        ? `<div style="
     background: radial-gradient(#F2B9A1, #EA6264);
-    width: 438px;
-    height: 220px;
-    padding: 24px;
+    width: 219px;
+    height: 110px;
+    padding: 12px;
     text-align: center;
     color: white;
-    font-size: 20px;
+    font-size: 12px;
     font-family: 'ヒラギノ角ゴ ProN W3';
     display: flex;
     flex-direction: column;
     justify-content: center;
     "
 >
-   <p style="margin-bottom: 12px;">HTMLならなんでも書き込めます。</p>
-   <p style="margin-bottom: 12px;">外部リソースはCORSの制約で厳しい。</p>
-   <p style="margin-bottom: 12px;">TwitterのOGPは438 x 220 です。</p>
-   <p>JS & JSX の対応をいま頑張ってます。</p>
+   <p style="margin-bottom: 8px;">HTMLならなんでも書き込めます。</p>
+   <p style="margin-bottom: 8px;">TwitterのOGPは438 x 220 です。</p>
+   <p>JS & JSX 対応をいま頑張ってます。</p>
 </div>`
-  );
+        : `<div style="
+      background: radial-gradient(#F2B9A1, #EA6264);
+      width: 438px;
+      height: 220px;
+      padding: 24px;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      font-family: 'ヒラギノ角ゴ ProN W3';
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      "
+  >
+     <p style="margin-bottom: 12px;">HTMLならなんでも書き込めます。</p>
+     <p style="margin-bottom: 12px;">外部リソースはCORSの制約で厳しい。</p>
+     <p style="margin-bottom: 12px;">TwitterのOGPは438 x 220 です。</p>
+     <p>JS & JSX の対応をいま頑張ってます。</p>
+  </div>`
+    );
+  }, []);
   const ref = React.useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
@@ -144,7 +194,7 @@ export default function Editor() {
         }
         @media screen and (max-width: 480px) {
           .container {
-            height: auto;
+            min-height: 100vh;
           }
         }
         .wrapper {
@@ -157,6 +207,7 @@ export default function Editor() {
         @media screen and (max-width: 480px) {
           .wrapper {
             flex-wrap: wrap;
+            height: initial;
           }
         }
         .monaco-wrapper {
@@ -169,6 +220,8 @@ export default function Editor() {
         @media screen and (max-width: 480px) {
           .monaco-wrapper {
             width: 100%;
+            height: 500px;
+            margin-bottom: 24px;
           }
         }
         .preview {
@@ -212,12 +265,18 @@ export default function Editor() {
         @media screen and (max-width: 480px) {
           .submit {
             margin-bottom: 0;
+            margin-bottom: 24px;
           }
         }
         .icon {
           width: 20px;
           height: 20px;
           margin-left: 12px;
+        }
+        p {
+          color: gray;
+          font-family: -apple-system, BlinkMacSystemFont,
+            "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
         }
       `}</style>
     </div>

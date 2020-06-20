@@ -76,10 +76,22 @@ export default function Result(props: NextPage & { pid: string }) {
           font-weight: 900;
           margin-bottom: 24px;
         }
+        @media screen and (max-width: 480px) {
+          h1 {
+            font-size: 24px;
+          }
+        }
         img {
           width: 50%;
           margin: auto;
           max-width: 590px;
+        }
+        @media screen and (max-width: 480px) {
+          img {
+            width: 90%;
+            margin: auto;
+            max-width: 590px;
+          }
         }
         button {
           display: block;

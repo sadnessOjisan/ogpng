@@ -20,7 +20,7 @@ export default function Result() {
         <meta property="og:url" content={`${createHostingURL(env())}/${pid}`} />
         <meta
           property="og:image"
-          content={`${createHostingURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
+          content={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
         />
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta
@@ -33,7 +33,7 @@ export default function Result() {
         />
         <meta
           name="twitter:image"
-          content={`${createHostingURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
+          content={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
         />
       </Head>
       <h1>生成された画像</h1>

@@ -29,6 +29,7 @@ export default function Result(props: NextPage & { pid: string }) {
           property="og:url"
           content={`${createHostingURL(env())}/${props.pid}`}
         />
+
         <meta property="og:type" content="article" />
         <meta
           property="og:description"
@@ -42,7 +43,7 @@ export default function Result(props: NextPage & { pid: string }) {
         />
         <meta
           name="twitter:image"
-          content={`https://storage.cloud.google.com/ogpng-fed0a.appspot.com/OGP/jwezillj`}
+          content={`https://storage.googleapis.com/yatoe-prd.appspot.com/ogp/aoiHNMFa7Huek29Ppl3Ea7l7Azj9L0BO`}
         />
       </Head>
       <h1>生成された画像</h1>

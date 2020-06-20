@@ -1,0 +1,58 @@
+.react-monaco-editor-container {
+  width: 90% !important;
+  height: 90% !important;
+  margin-top: 5% !important;
+  margin: auto;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+}
+
+.view-lines {
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+}
+
+.margin {
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+  background-color: #ebecf0 !important;
+}
+
+.monaco-editor-background {
+  background-color: #ebecf0 !important;
+}
+
+.monaco-editor {
+  background-color: #ebecf0 !important;
+}
+
+.margin {
+  height: 100% !important;
+}
+
+.monaco-scrollable-element {
+  height: 100% !important;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+}
+
+.decorationsOverviewRuler {
+  display: none;
+}
+
+.tree {
+  background-color: #ebecf0 !important;
+  border: none !important;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff !important;
+}
+
+.details {
+  /* border: solid 1px red !important;
+  box-shadow: 0px 0px 4px 1px red !important; */
+  border: none !important;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff !important;
+}
+
+.view-lines {
+  height: 726px !important;
+}
+
+.margin-view-overlays {
+  height: 726px !important;
+}

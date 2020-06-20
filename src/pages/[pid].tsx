@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Link from "next/link";
 import createHostingURL from "../helper/createHostingURL";
 import cloudStorageKeys from "../constatns/cloudStorageKeys";
 import env from "../helper/env";
@@ -44,6 +45,9 @@ export default function Result() {
           <img src="/twitter.svg" className="icon"></img>
         </button>
       </a>
+      <Link href="/">
+        <button>←TOPに戻る</button>
+      </Link>
       <style jsx>{`
         .wrapper {
           text-align: center;
@@ -83,6 +87,12 @@ export default function Result() {
           font-family: -apple-system, BlinkMacSystemFont,
             "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
           margin-top: 52px;
+        }
+        button:hover {
+          box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+        }
+        button:active {
+          box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
         }
         .icon {
           width: 20px;

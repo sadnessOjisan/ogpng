@@ -13,12 +13,12 @@ export default function Editor() {
   const [text, edit] = React.useState(
     `<div style="
     background: radial-gradient(#F2B9A1, #EA6264);
-    height: 400px;
-    width: 500px;
+    width: 438px;
+    height: 220px;
     padding: 24px;
     text-align: center;
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'ヒラギノ角ゴ ProN W3';
     display: flex;
     flex-direction: column;
@@ -26,7 +26,8 @@ export default function Editor() {
     "
 >
    <p style="margin-bottom: 12px;">HTMLならなんでも書き込めます。</p>
-   <p style="margin-bottom: 12px;">外部リソースはCORSの制約で厳しい</p>
+   <p style="margin-bottom: 12px;">外部リソースはCORSの制約で厳しい。</p>
+   <p style="margin-bottom: 12px;">TwitterのOGPは438 x 220 です。</p>
    <p>JS & JSX の対応をいま頑張ってます。</p>
 </div>`
   );

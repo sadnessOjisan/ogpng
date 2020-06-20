@@ -43,7 +43,9 @@ export default function Result(props: NextPage & { pid: string }) {
         />
         <meta
           name="twitter:image"
-          content={`https://storage.googleapis.com/yatoe-prd.appspot.com/ogp/aoiHNMFa7Huek29Ppl3Ea7l7Azj9L0BO`}
+          content={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${
+            props.pid
+          }`}
         />
       </Head>
       <h1>生成された画像</h1>

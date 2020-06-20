@@ -13,21 +13,21 @@ export default function Result(props: NextPage & { pid: string }) {
   React.useEffect(() => {
     setURL(window.location.href);
   }, []);
-  const router = useRouter();
-  const { pid } = router.query;
+  const appEnv = env();
+  console.log("appEnv:", appEnv);
   return (
     <div className="wrapper">
       <Head>
         <title>{"created OGP"}</title>
         <meta
           property="og:image"
-          content={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${
+          content={`${createGcsURL(appEnv)}/${cloudStorageKeys.OGP}/${
             props.pid
           }`}
         />
         <meta
           property="og:url"
-          content={`${createHostingURL(env())}/${props.pid}`}
+          content={`${createHostingURL(appEnv)}/${props.pid}`}
         />
 
         <meta property="og:type" content="article" />

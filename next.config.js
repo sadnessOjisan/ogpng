@@ -1,6 +1,8 @@
 const withCSS = require("@zeit/next-css");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 
+console.log("process.env.DEPLOY_ENV", process.env.DEPLOY_ENV);
+
 module.exports = withCSS({
   webpack: (config) => {
     config.module.rules.push({

@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: any) {
       />
       <meta
         property="og:title"
-        content="プログラミングでOGP画像を作れる - ogpng"
+        content="プログラミングでOGP画像を作れる | ogpng"
       />
       <meta property="og:type" content="page" />
       <meta

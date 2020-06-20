@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
             property="og:description"
             content={`ogpngは、コードからOGP画像を生成しシェアできるサービスです。`}
           />
-          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:title"
             content="プログラミングでOGP画像を作れる | ogpng"

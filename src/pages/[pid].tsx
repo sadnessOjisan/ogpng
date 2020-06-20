@@ -18,16 +18,20 @@ export default function Result() {
     <div className="wrapper">
       <Head>
         <title>{"created OGP"}</title>
-        <meta property="og:url" content={`${createHostingURL(env())}/${pid}`} />
         <meta
           property="og:image"
           content={`${createGcsURL(env())}/${cloudStorageKeys.OGP}/${pid}`}
         />
-        <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta property="og:url" content={`${createHostingURL(env())}/${pid}`} />
+
+        <meta property="og:type" content="article" />
         <meta
-          name="twitter:title"
-          content="プログラミングでOGP画像を作れる - ogpng"
+          property="og:description"
+          content={`ogpngは、HTMLからOGP画像を生成しシェアできるサービスです。`}
         />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="yatoe" />
         <meta
           name="twitter:description"
           content={`ogpngは、HTMLからOGP画像を生成しシェアできるサービスです。`}

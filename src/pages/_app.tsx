@@ -25,14 +25,6 @@ export default function App({ Component, pageProps }: any) {
         property="og:description"
         content={`ogpngは、コードからOGP画像を生成しシェアできるサービスです。`}
       />
-      <meta
-        name="twitter:title"
-        content="プログラミングでOGP画像を作れる - ogpng"
-      />
-      <meta
-        name="twitter:description"
-        content={`ogpngは、HTMLからOGP画像を生成しシェアできるサービスです。`}
-      />
       <Component {...pageProps} />
     </>
   );

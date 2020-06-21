@@ -198,9 +198,9 @@ export default function Editor() {
         }
         .wrapper {
           display: flex;
-          height: 80%;
+          height: 75%;
           align-items: center;
-          padding: 8px;
+          padding: 4px;
           justify-content: space-evenly;
         }
         @media screen and (max-width: 480px) {
@@ -240,7 +240,8 @@ export default function Editor() {
         }
         .submit {
           display: block;
-          margin: 16px auto;
+          margin: 8px auto;
+          margin-bottom: 24px;
           box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
           transition: all 0.2s ease-in-out;
           cursor: pointer;

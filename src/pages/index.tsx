@@ -101,6 +101,7 @@ export default function Editor() {
       .then((dataURL) => {
         const img = new Image();
         img.src = dataURL;
+        img.crossOrigin = "Anonymous";
         img.onload = () => {
           const canvas = document.createElement("canvas");
           canvas.width = ref.current.offsetWidth * 2;

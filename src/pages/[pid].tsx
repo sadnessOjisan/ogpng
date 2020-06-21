@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
 import createHostingURL from "../helper/createHostingURL";
@@ -31,13 +30,13 @@ export default function Result(props: NextPage & { pid: string }) {
         <meta property="og:type" content="article" />
         <meta
           property="og:description"
-          content={`ogpngは、HTMLからOGP画像を生成しシェアできるサービスです。`}
+          content={`ogpngは、プログラミングからOGP画像を生成しシェアできるサービスです。`}
         />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:description"
-          content={`ogpngは、HTMLからOGP画像を生成しシェアできるサービスです。`}
+          content={`ogpngは、プログラミングからOGP画像を生成しシェアできるサービスです。`}
         />
         <meta
           name="twitter:image"

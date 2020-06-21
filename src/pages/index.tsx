@@ -75,7 +75,6 @@ export default function Editor() {
       "
   >
      <p style="margin-bottom: 12px;">HTMLならなんでも書き込めます。</p>
-     <p style="margin-bottom: 12px;">外部リソースはCORSの制約で厳しい。</p>
      <p style="margin-bottom: 12px;">TwitterのOGPは438 x 220 です。</p>
      <p>JS & JSX の対応をいま頑張ってます。</p>
   </div>`

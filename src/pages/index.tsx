@@ -129,9 +129,9 @@ export default function Editor() {
       <p style={{ textAlign: "center" }}>
         (注)現状の設計上、imgタグに外部URLを指定することができません。もし外部URLを使いたい場合は
         <a
-          href="https://github.com/sadnessOjisan/img-url-to-data"
+          href="https://sadnessojisan.github.io/img-url-to-data/"
           target="_blank"
-          rel="noopener"
+          rel="noreferrer"
         >
           こちら
         </a>
@@ -171,7 +171,7 @@ export default function Editor() {
         <a
           href="https://twitter.com/sadnessOjisan"
           target="_blank"
-          rel="noopener"
+          rel="noreferrer"
         >
           @sadnessOjisan
         </a>

@@ -126,6 +126,17 @@ export default function Editor() {
         <span> &#010;beta</span>
       </h1>
       <h2>コードから画像作成してシェアできるサービス</h2>
+      <p style={{ textAlign: "center" }}>
+        (注)現状の設計上、imgタグに外部URLを指定することができません。もし外部URLを使いたい場合は
+        <a
+          href="https://sadnessojisan.github.io/img-url-to-data/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          こちら
+        </a>
+        で外部URLをdataURIに変換し、それをimgタグのsrcに指定してください。
+      </p>
       <div className="wrapper">
         <div className="monaco-wrapper">
           <MonacoEditor
@@ -156,12 +167,23 @@ export default function Editor() {
         <img src="/airplane.svg" className="icon"></img>
       </button>
       <p style={{ textAlign: "center" }}>
-        (注)beta版です。予告なくデータを消すことがあるかもしれません。他人を誹謗中傷する内容や公的良俗にそぐわない内容の投稿は禁止します。
+        (注)beta版です。予告なくデータを消すことがあるかもしれません。他人を誹謗中傷する内容や公的良俗にそぐわない内容の投稿は禁止します。疑問などがございましたら
+        <a
+          href="https://twitter.com/sadnessOjisan"
+          target="_blank"
+          rel="noreferrer"
+        >
+          @sadnessOjisan
+        </a>
+        まで
       </p>
       <style jsx>{`
         html,
         body {
           background-color: #ebecf0;
+        }
+        a {
+          color: #2e87ff;
         }
         h1,
         h2 {

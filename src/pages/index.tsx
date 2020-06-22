@@ -169,6 +169,9 @@ export default function Editor() {
         body {
           background-color: #ebecf0;
         }
+        a {
+          color: #2e87ff;
+        }
         h1,
         h2 {
           font-family: -apple-system, BlinkMacSystemFont,

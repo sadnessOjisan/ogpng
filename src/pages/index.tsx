@@ -9,6 +9,8 @@ import "../vendor/css/normal.css";
 
 const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });
 
+type ModeType = "HTML" | "JSX";
+
 const mediaQueries = {
   mobile: "(max-width: 767px)",
   prefersReducedMotion: "(prefers-reduced-motion: reduce)",
@@ -35,6 +37,7 @@ function useMedia(query) {
 }
 
 export default function Editor() {
+  const [mode, setMode] = React.useState<ModeType>("HTML");
   const router = useRouter();
   const [text, edit] = React.useState("");
   const mobileView = useMedia(mediaQueries.mobile);
@@ -138,6 +141,36 @@ export default function Editor() {
         で外部URLをdataURIに変換し、それをimgタグのsrcに指定してください。
       </p>
       <div className="wrapper">
+        <div className="radiogroup">
+          <div className="radio-wrapper">
+            <input
+              className="state"
+              type="radio"
+              id="HTML"
+              value="HTML"
+              checked={mode === "HTML"}
+              onChange={() => setMode("HTML")}
+            />
+            <label className="label" htmlFor="HTML">
+              <div className="indicator"></div>
+              <span className="text">HTML</span>
+            </label>
+          </div>
+          <div className="radio-wrapper">
+            <input
+              className="state"
+              type="radio"
+              id="JSX"
+              value="JSX"
+              checked={mode === "JSX"}
+              onChange={() => setMode("JSX")}
+            />
+            <label className="label" htmlFor="JSX">
+              <div className="indicator"></div>
+              <span className="text">JSX</span>
+            </label>
+          </div>
+        </div>
         <div className="monaco-wrapper">
           <MonacoEditor
             language="html"
@@ -299,6 +332,75 @@ export default function Editor() {
           color: gray;
           font-family: -apple-system, BlinkMacSystemFont,
             "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+        }
+        .state {
+          position: absolute;
+          top: 0;
+          right: 0;
+          opacity: 1e-5;
+          pointer-events: none;
+        }
+
+        .label {
+          display: inline-flex;
+          align-items: center;
+          cursor: pointer;
+          color: #394a56;
+        }
+
+        .text {
+          margin-left: 16px;
+          opacity: 0.6;
+          transition: opacity 0.2s linear, transform 0.2s ease-out;
+        }
+
+        .indicator {
+          position: relative;
+          border-radius: 50%;
+          height: 30px;
+          width: 30px;
+          box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
+          overflow: hidden;
+        }
+
+        .indicator::before,
+        .indicator::after {
+          content: "";
+          position: absolute;
+          top: 10%;
+          left: 10%;
+          height: 80%;
+          width: 80%;
+          border-radius: 50%;
+        }
+
+        .indicator::before {
+          box-shadow: -4px -2px 4px 0px #d1d9e6, 4px 2px 8px 0px #fff;
+        }
+
+        .indicator::after {
+          background-color: #ecf0f3;
+          box-shadow: -4px -2px 4px 0px #fff, 4px 2px 8px 0px #d1d9e6;
+          transform: scale3d(1, 1, 1);
+          transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+        }
+
+        .state:checked ~ .label .indicator::after {
+          transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
+          opacity: 0;
+        }
+
+        .state:focus ~ .label .text {
+          transform: translate3d(8px, 0, 0);
+          opacity: 1;
+        }
+
+        .label:hover .text {
+          opacity: 1;
+        }
+
+        .radio-wrapper {
+          margin-bottom: 8px;
         }
       `}</style>
     </div>

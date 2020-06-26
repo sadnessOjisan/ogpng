@@ -4,8 +4,10 @@ import dynamic from "next/dynamic";
 import domtoimage from "dom-to-image";
 import { saveOgp } from "../repository/postPng";
 import { generateRandomId } from "../helper/util";
+import convert from "reactel-to-html";
 import "../vendor/css/monaco.css";
 import "../vendor/css/normal.css";
+import sampleCode from "../constatns/sampleCode";
 
 const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });
 
@@ -38,51 +40,29 @@ function useMedia(query) {
 
 export default function Editor() {
   const [mode, setMode] = React.useState<ModeType>("HTML");
+  const [isMount, setMount] = React.useState(false);
   const router = useRouter();
   const [text, edit] = React.useState("");
+  const [code, setHTML] = React.useState("");
   const mobileView = useMedia(mediaQueries.mobile);
+
   React.useEffect(() => {
-    console.log("mobileView", mobileView);
-    edit(
-      mobileView
-        ? `<div style="
-    background: radial-gradient(#F2B9A1, #EA6264);
-    width: 219px;
-    height: 110px;
-    padding: 12px;
-    text-align: center;
-    color: white;
-    font-size: 12px;
-    font-family: 'ヒラギノ角ゴ ProN W3';
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    "
->
-   <p style="margin-bottom: 8px;">HTMLならなんでも書き込めます。</p>
-   <p style="margin-bottom: 8px;">TwitterのOGPは438 x 220 です。</p>
-   <p>JS & JSX 対応をいま頑張ってます。</p>
-</div>`
-        : `<div style="
-      background: radial-gradient(#F2B9A1, #EA6264);
-      width: 438px;
-      height: 220px;
-      padding: 24px;
-      text-align: center;
-      color: white;
-      font-size: 20px;
-      font-family: 'ヒラギノ角ゴ ProN W3';
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      "
-  >
-     <p style="margin-bottom: 12px;">HTMLならなんでも書き込めます。</p>
-     <p style="margin-bottom: 12px;">TwitterのOGPは438 x 220 です。</p>
-     <p>JS & JSX の対応をいま頑張ってます。</p>
-  </div>`
-    );
+    setMount(true);
+    edit(mobileView ? sampleCode.html.mobile : sampleCode.html.pc);
   }, []);
+
+  React.useEffect(() => {
+    if (isMount) {
+      if (mode === "HTML") {
+        edit(mobileView ? sampleCode.html.mobile : sampleCode.html.pc);
+      } else if (mode === "JSX") {
+        edit(mobileView ? sampleCode.jsx.mobile : sampleCode.jsx.pc);
+      }
+    } else {
+      setMount(true);
+    }
+  }, [mode]);
+
   const ref = React.useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
@@ -173,11 +153,22 @@ export default function Editor() {
         </div>
         <div className="monaco-wrapper">
           <MonacoEditor
-            language="html"
+            language={mode === "HTML" ? "html" : "jsx"}
             // theme="vs"
             value={text}
             options={{ minimap: { enabled: false } }}
-            onChange={edit}
+            onChange={(str) => {
+              edit(str);
+              if (mode === "HTML") {
+                setHTML(str);
+              } else if (mode === "JSX") {
+                try {
+                  setHTML(convert(str));
+                } catch {
+                  setHTML(str);
+                }
+              }
+            }}
             editorDidMount={() => {
               // @ts-ignore
               window.MonacoEnvironment.getWorkerUrl = (moduleId, label) => {
@@ -192,7 +183,12 @@ export default function Editor() {
           />
         </div>
         <div className="preview">
-          <div ref={ref} dangerouslySetInnerHTML={{ __html: text }} />
+          <div
+            ref={ref}
+            dangerouslySetInnerHTML={{
+              __html: code,
+            }}
+          />
         </div>
       </div>
       <button className="submit" onClick={handleClick}>

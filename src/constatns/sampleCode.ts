@@ -39,7 +39,7 @@ export default {
   },
   jsx: {
     mobile: `<div style={{
-        background: 'radial-gradient(#F2B9A1, #EA6264)',
+        background: 'radial-gradient(#F26AA1, #EA6264)',
         width: '219px',
         height: '110px',
         padding: '24px',
@@ -57,7 +57,7 @@ export default {
    <p>JS & JSX の対応をいま頑張ってます。</p>
 </div>`,
     pc: `<div style={{
-        background: 'radial-gradient(#F2B9A1, #EA6264)',
+        background: 'radial-gradient(#F26AA1, #EA6264)',
         width: '438px',
         height: '220px',
         padding: '24px',

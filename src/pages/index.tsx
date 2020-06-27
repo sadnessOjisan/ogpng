@@ -39,12 +39,14 @@ function useMedia(query) {
 }
 
 export default function Editor() {
+  const mobileView = useMedia(mediaQueries.mobile);
   const [mode, setMode] = React.useState<ModeType>("HTML");
   const [isMount, setMount] = React.useState(false);
   const router = useRouter();
   const [text, edit] = React.useState("");
-  const [code, setHTML] = React.useState("");
-  const mobileView = useMedia(mediaQueries.mobile);
+  const [code, setHTML] = React.useState(
+    mobileView ? sampleCode.html.mobile : sampleCode.html.pc
+  );
 
   React.useEffect(() => {
     setMount(true);

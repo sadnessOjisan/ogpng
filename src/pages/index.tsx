@@ -55,8 +55,14 @@ export default function Editor() {
     if (isMount) {
       if (mode === "HTML") {
         edit(mobileView ? sampleCode.html.mobile : sampleCode.html.pc);
+        setHTML(mobileView ? sampleCode.html.mobile : sampleCode.html.pc);
       } else if (mode === "JSX") {
         edit(mobileView ? sampleCode.jsx.mobile : sampleCode.jsx.pc);
+        setHTML(
+          mobileView
+            ? convert(sampleCode.jsx.mobile)
+            : convert(sampleCode.jsx.pc)
+        );
       }
     } else {
       setMount(true);

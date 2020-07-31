@@ -16,7 +16,7 @@ export default {
 >
    <p style="margin-bottom: 8px;">HTMLならなんでも書き込めます。</p>
    <p style="margin-bottom: 8px;">TwitterのOGPは438 x 220 です。</p>
-   <p>JS & JSX 対応をいま頑張ってます。</p>
+   <p>JS & JSX でも使えます。</p>
 </div>`,
     pc: `<div style="
     background: radial-gradient(#F2B9A1, #EA6264);
@@ -72,7 +72,7 @@ export default {
 >
    <p style={{marginBottom: '12px'}}>HTMLならなんでも書き込めます。</p>
    <p style={{marginBottom: '12px'}}>TwitterのOGPは438 x 220 です。</p>
-   <p>JS & JSX の対応をいま頑張ってます。</p>
+   <p>JS & JSX の対応しました。</p>
 </div>`,
   },
 };
